@@ -1,0 +1,2 @@
+- Add crowns to /create
+- Show newly created quest ids in /create

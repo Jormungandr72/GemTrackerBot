@@ -1,0 +1,60 @@
+Implemented:
+
+/commands
+
+    Description:        Lists out all of the bot's possible commands
+
+    Parameters:         None
+
+/create [main_monster] [is_tempered] [has_gem] [artian_count] [decoration_count]
+
+    Description:            Creates and stores a new investigation.
+
+    Parameters:
+        [main_monster]      (required):     the name of the primary monster of the quest
+        [is_tempered]       (optional):     'yes' if the monster is tempered, and 'no' if it isn't
+        [has_gem]           (optional):     'yes' if the quest has a guaranteed gem, and 'no' if it doesn't
+        [artian_count]      (optional):     the number of artian parts that the quest drops
+        [decoration_count]  (optional):     the number of decorations that the quest drops
+
+Planned:
+
+/update [quest_id] [main_monster] [is_tempered] [has_gem] [attempts_remaining]
+
+    Description:        Updates the information of the investigation with the specified id.
+
+    Parameters:
+        [quest_id]      (required):     the id of the investigation to update
+        [main_monster]  (required):     the name of the primary monster of the quest
+        [is_tempered]   (required):     'yes' if the monster is tempered, and 'no' if it isn't
+        [has_gem]       (required):     'yes' if the quest has a gem, and 'no' if it doesn't
+        [attempts_left] (optional):     the number of attempts left of the quest
+
+/delete [quest_id]
+
+    Description:        Deletes the investigation with the specified id.
+
+    Parameters:
+        [quest_id]      (required):     the id of the investigation to delete.
+
+/list
+
+    Description:        Lists all of the user's stored investigations with their quest ids.
+
+    Parameters:         None
+
+/find [main_monster] [is_tempered] [has_gem]
+
+    Description:        Searches all created investigations based on given criteria.
+
+    Parameters:
+        [main_monster]  (required):     the name of the primary monster of the quest
+        [is_tempered]   (optional):     'yes' if  the monster should be tempered, and 'no' if it shouldn't
+        [has_gem]       (optional):     'yes' if the quest should have a gem, and 'no' if it shouldn't
+
+/rewards [quest_id]
+
+    Description:        Lists all rewards for the quest with the specfied id.
+
+    Parameters:
+        [quest_id]      (required):     the id of the investigation to list the rewards of.
