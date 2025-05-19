@@ -37,7 +37,7 @@ Planned:
     Parameters:
         [quest_id]      (required):     the id of the investigation to delete.
 
-/list
+/quests
 
     Description:        Lists all of the user's stored investigations with their quest ids.
 
