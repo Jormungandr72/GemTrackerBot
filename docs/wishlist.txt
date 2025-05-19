@@ -1,2 +1,3 @@
 - Add crowns to /create
 - Show newly created quest ids in /create
+- Check user inputs against a MH DB in /create
