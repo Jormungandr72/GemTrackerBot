@@ -13,6 +13,8 @@ class CommandList:
     -------------------------------------------------------------------------------
     Change Log:
     Who  When           What
+    PJM  05.19.2025     Began working to print DB info to the console. On to the 
+                        testing phase.
     PJM  05.19.2025     Started working on the quests command, formerly the list
                         command. Renamed to avoid confusion. Also made minor 
                         spelling adjustments to the create command, and re-wrote
@@ -140,4 +142,12 @@ class CommandList:
         
         Return: {True} if the quests were created successfully; {False} otherwise
         """
-        user_id = ctx.author_id
+        DBManager.cur.execute("""
+        select ROWID, main_monster
+        from quests
+        where user_id = ?;
+        """, (ctx.author_id))
+
+        print(DBManager.cur.fetchall())
+
+        return False
