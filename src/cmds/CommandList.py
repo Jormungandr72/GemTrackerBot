@@ -8,10 +8,15 @@ class CommandList:
     Author:     Patrick J. McGranahan
     Date:       05.10.2025
     Language:   python
-    Purpose:    The purpose of this class is to handle events in discord.
+    Purpose:    The purpose of this class is to handle slash commands for the
+                GemTrackerBot discord bot.
     -------------------------------------------------------------------------------
     Change Log:
     Who  When           What
+    PJM  05.19.2025     Started working on the quests command, formerly the list
+                        command. Renamed to avoid confusion. Also made minor 
+                        spelling adjustments to the create command, and re-wrote
+                        purpose to be more acurate.
     PJM  05.19.2025     Create command is functional. Added it to the list of
                         implemented commands.
     PJM  05.19.2025     Fixed the issue of data not appearing in the database- 
@@ -124,3 +129,15 @@ class CommandList:
         print("User {} used the command 'create'.".format(ctx.author))
 
         return True
+    
+    @slash_command(name='quests', description='lists all of your quests', scopes=[1154837347632947313])
+    async def quests(ctx: SlashContext) -> bool:
+        """
+        Command to list all of the user's quests.
+
+        Args:
+            ctx (SlashContext): the context of the command
+        
+        Return: {True} if the quests were created successfully; {False} otherwise
+        """
+        user_id = ctx.author_id
